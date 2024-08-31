@@ -17,7 +17,7 @@ int top=-1;
 
 struct node *create(int);
 struct node *insert_node(struct node*,int);
-struct node *binarysearchtree(struct node*,int);
+struct node *binarysearchtree_non(struct node*,int);
 void delete_node(struct node*,int);
 struct node *successor(struct node *ptr);
 int main()
@@ -27,7 +27,7 @@ int main()
     {
         printf("\n");
         printf("1. insert node:\n");
-        printf("2. binarysearchtree:\n");
+        printf("2. search in BST:\n");
         printf("3. exit: \n");
         printf("4. delete node.\n");
         printf("5. Inorder non recursive\n");
@@ -42,9 +42,17 @@ int main()
                     scanf("%d",&key);
                     root=insert_node(root,key);
                     break;
-            case 2: printf("Enter the key in binarysearchtreee: ");
+            case 2: printf("Enter the key to  search in BST: ");
                     scanf("%d",&key);
-                    binarysearchtree(root,key);
+                    binarysearchtree_non(root,key);
+                    if(root==0)
+                    {
+                        printf("key not found\n");
+                    }
+                    else
+                    {
+                        printf("key found\n");
+                    }
                     break;
             case 3: printf(".......................program terminated.........................");
                     exit(0);
@@ -102,27 +110,26 @@ struct node *insert_node(struct node *ptr,int key)
     }
     return ptr;
 }
-struct node* binarysearchtree(struct node *ptr,int key)
- {
-     if(ptr==NULL)
-     {
-         return ptr;
-     }
-     else if(ptr->data==key)
-     {
-         printf("node found.");
-         return ptr;
-     }
-     else if(key<ptr->data)
-     {
-         return binarysearchtree(ptr->lchild,key);
-     }
-     else if(key>ptr->data)
-     {
-         return binarysearchtree(ptr->rchild,key);
-     }
-     return ptr;
- }
+struct node *binarysearchtree_non(struct node *root,int key)
+{
+    while(root!=NULL)
+    {
+        if(key>root->data)
+        {
+            root=root->rchild;
+
+        }
+        else if(key<root->data)
+        {
+            root=root->lchild;
+        }
+        else
+        {
+            return root;
+        }
+    }
+    return NULL;
+}
  void delete_node(struct node*root,int item)
 {
     struct node*ptr,*ptr1,*parent ;
