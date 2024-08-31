@@ -22,6 +22,7 @@ void postorder(struct node*);
 struct node *create(int);
 struct node *insert_node(struct node*,int);
 struct node *binarysearchtree(struct node*,int);
+struct node *binarysearchtree_non(struct node*,int);
 void delete_node(struct node*,int);
 struct node *successor(struct node *ptr);
 int main()
@@ -34,12 +35,13 @@ int main()
         printf("2. inorder:\n");
         printf("3. preorder:\n");
         printf("4. postorder:\n");
-        printf("5. binarysearchtree:\n");
+        printf("5. search in BST:\n");
         printf("6. exit: \n");
         printf("7. delete node.\n");
         printf("8. Inorder non recursion\n");
         printf("9. preorder non recursion\n");
         printf("10. postorder non recursion\n");
+        printf("11. SEARCH in BST_non");
         printf("Enter your choice: ");
         scanf("%d",&ch);
         switch(ch)
@@ -72,8 +74,18 @@ int main()
                     break;
             case 10: postorder_non(root);
                     break;
-             
-
+            case 11: printf("Enter the key to  search in BST: ");
+                    scanf("%d",&key);
+                    binarysearchtree_non(root,key);
+                    if(root==0)
+                    {
+                        printf("key not found\n");
+                    }
+                    else
+                    {
+                        printf("key found\n");
+                    }
+                    break;
             default: printf("Invalid choise..");
             
         }
@@ -172,6 +184,26 @@ struct node* binarysearchtree(struct node *ptr,int key)
      }
      return ptr;
  }
+struct node *binarysearchtree_non(struct node *root,int key)
+{
+    while(root!=NULL)
+    {
+        if(key>root->data)
+        {
+            root=root->rchild;
+
+        }
+        else if(key<root->data)
+        {
+            root=root->lchild;
+        }
+        else
+        {
+            return root;
+        }
+    }
+    return NULL;
+}
  void delete_node(struct node*root,int item)
 {
     struct node*ptr,*ptr1,*parent ;
