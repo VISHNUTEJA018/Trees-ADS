@@ -21,6 +21,7 @@ void postorder(struct node*);
 
 struct node *create(int);
 struct node *insert_node(struct node*,int);
+
 struct node *binarysearchtree(struct node*,int);
 struct node *binarysearchtree_non(struct node*,int);
 void delete_node(struct node*,int);
