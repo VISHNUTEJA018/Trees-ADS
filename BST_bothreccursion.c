@@ -41,7 +41,7 @@ int main()
         printf("8. Inorder non recursion\n");
         printf("9. preorder non recursion\n");
         printf("10. postorder non recursion\n");
-        printf("11. SEARCH in BST_non");
+        printf("11. SEARCH in BST_non\n");
         printf("Enter your choice: ");
         scanf("%d",&ch);
         switch(ch)
