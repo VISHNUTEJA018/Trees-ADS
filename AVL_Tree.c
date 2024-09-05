@@ -101,13 +101,13 @@ int height(struct node *ptr)
 }
 int max(int a, int b)
 {
- return (a>b)?a:b;
+    return (a>b)?a:b;
 }
 int balanceFactor(struct node *n)
 {
  if(n==NULL)
  {
-   return 0;
+    return 0;
  }
  return height(n->lchild) - height(n->rchild);
 }
@@ -135,8 +135,7 @@ struct node* leftRotate(struct node* x)
  height(y->rchild)) + 1;
  return y;
 }
-struct node *createNode(int key)
-{
+struct node *createNode(int key){
  struct node* newnode = (struct node *) malloc(sizeof(struct node));
  newnode->key = key;
  newnode->lchild = NULL;
@@ -156,21 +155,22 @@ struct node *insert(struct node* node, int key)
  int bf = balanceFactor(node);
  if(bf>1 && key < node->lchild->key)
  {
-   return rightRotate(node);
+    return rightRotate(node);
  }
  if(bf<-1 && key > node->rchild->key)
  {
-   return leftRotate(node);
+    return leftRotate(node);
  }
  if(bf>1 && key > node->lchild->key)
  {
-   node->lchild = leftRotate(node->lchild);
-   return rightRotate(node);
+ node->lchild = leftRotate(node->lchild);
+    return rightRotate(node);
  }
  if(bf<-1 && key < node->rchild->key)
  {
-   node->rchild = rightRotate(node->rchild);
-   return leftRotate(node);
+    node->rchild = rightRotate(node->rchild);
+    return leftRotate(node);
  }
  return node;
 }
+
