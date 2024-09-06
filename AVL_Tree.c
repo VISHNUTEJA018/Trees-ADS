@@ -3,7 +3,7 @@
 
 struct node
 {
- int key;
+ int key,data;
  struct node *lchild;
  struct node *rchild;
  int height;
@@ -21,6 +21,8 @@ void inorder(struct node*);
 void preorder(struct node*);
 void postorder(struct node*);
 
+struct node* binarysearchtree(struct node*,int);
+
 
 int main()
 {
@@ -33,6 +35,7 @@ int main()
         printf("3. preorder:\n");
         printf("4. postorder:\n");
         printf("6. exit: \n");
+        printf("7. Search in AVL: \n");
         printf("Enter your choice: ");
         scanf("%d",&ch);
         switch(ch)
@@ -50,6 +53,10 @@ int main()
                     break;
             case 6: printf(".......................program terminated.........................");
                     exit(0);
+            case 7: printf("Enter key to search in AVL:");
+                    scanf("%d",&key);
+                    binarysearchtree(root,key);
+                    break;
 
             default: printf("Invalid choise..");
             
@@ -173,4 +180,25 @@ struct node *insert(struct node* node, int key)
  }
  return node;
 }
+struct node* binarysearchtree(struct node *ptr,int key)//same as bst
+ {
+     if(ptr==NULL)
+     {
+         return ptr;
+     }
+     else if(ptr->data==key)
+     {
+         printf("node found.");
+         return ptr;
+     }
+     else if(key<ptr->data)
+     {
+         return binarysearchtree(ptr->lchild,key);
+     }
+     else if(key>ptr->data)
+     {
+         return binarysearchtree(ptr->rchild,key);
+     }
+     return ptr;
+ }
 
