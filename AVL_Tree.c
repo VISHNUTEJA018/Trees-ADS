@@ -170,7 +170,7 @@ struct node *insert(struct node* node, int key)
  }
  if(bf>1 && key > node->lchild->key)
  {
- node->lchild = leftRotate(node->lchild);
+    node->lchild = leftRotate(node->lchild);
     return rightRotate(node);
  }
  if(bf<-1 && key < node->rchild->key)
