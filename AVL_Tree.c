@@ -20,8 +20,8 @@ struct node *insert(struct node*,int);
 void inorder(struct node*);
 void preorder(struct node*);
 void postorder(struct node*);
-
 struct node* binarysearchtree(struct node*,int);
+
 int main()
 {
     int ch,key;
