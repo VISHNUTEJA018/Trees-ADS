@@ -22,8 +22,6 @@ void preorder(struct node*);
 void postorder(struct node*);
 
 struct node* binarysearchtree(struct node*,int);
-
-
 int main()
 {
     int ch,key;
