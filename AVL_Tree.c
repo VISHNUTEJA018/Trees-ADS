@@ -151,7 +151,7 @@ struct node *create(int key){
 struct node *insert(struct node* node, int key)
 {
  if (node == NULL)
- return createNode(key);
+ return create(key);
  if (key < node->key)
  node->lchild = insert(node->lchild, key);
  else if (key > node->key)
