@@ -15,7 +15,7 @@ int balanceFactor(struct node*);
 int max(int,int);
 struct node *leftRotate(struct node*);
 struct node *rightRotate(struct node*);
-struct node *createNode(int);
+struct node *create(int);
 struct node *insert(struct node*,int);
 void inorder(struct node*);
 void preorder(struct node*);
@@ -140,7 +140,7 @@ struct node* leftRotate(struct node* x)
  height(y->rchild)) + 1;
  return y;
 }
-struct node *createNode(int key){
+struct node *create(int key){
  struct node* newnode = (struct node *) malloc(sizeof(struct node));
  newnode->key = key;
  newnode->lchild = NULL;
