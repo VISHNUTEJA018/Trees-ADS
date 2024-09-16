@@ -122,10 +122,8 @@ struct node* rightRotate(struct node* y)
  struct node *T2 = x->rchild;
  x->rchild = y;
  y->lchild = T2;
- y->height = max(height(y->lchild),
- height(y->rchild)) + 1;
- x->height = max(height(x->lchild),
- height(x->rchild)) + 1;
+ y->height = max(height(y->lchild),height(y->rchild)) + 1;
+ x->height = max(height(x->lchild),height(x->rchild)) + 1;
  return x;
 }
 struct node* leftRotate(struct node* x)
@@ -134,10 +132,8 @@ struct node* leftRotate(struct node* x)
  struct node *T2 = y->lchild;
  y->lchild = x;
  x->rchild = T2;
- x->height = max(height(x->lchild),
- height(x->rchild)) + 1;
- y->height = max(height(y->lchild),
- height(y->rchild)) + 1;
+ x->height = max(height(x->lchild),height(x->rchild)) + 1;
+ y->height = max(height(y->lchild),height(y->rchild)) + 1;
  return y;
 }
 struct node *createNode(int key){
