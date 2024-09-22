@@ -259,7 +259,7 @@ struct node* binarysearchtree(struct node *ptr,int key)
     }
     else if(ptr->key==key)
     {
-        printf("node found.");
+        printf(".....node found.....");
         return ptr;
     }
     else if(key<ptr->key)
