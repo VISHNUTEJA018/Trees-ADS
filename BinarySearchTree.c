@@ -78,13 +78,11 @@ struct node *insert_node(struct node *ptr,int key)
     if(ptr==NULL)
     {
         ptr=create(key);
-
     }
     else if(ptr->data==key)
     {
         printf("data already exist.\n");
         return ptr;
-
     }
     else if(key<ptr->data)
     {
