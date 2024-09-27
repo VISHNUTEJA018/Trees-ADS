@@ -66,7 +66,7 @@ int main()
     }
 
     printf("\n");
-    
+    printf("Sorted elements are: \n");
     QuickSort(a,n,0,n-1);
 
     printArray(a,n);
