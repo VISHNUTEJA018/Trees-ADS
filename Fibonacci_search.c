@@ -1,4 +1,7 @@
 #include<stdio.h>
+#include<stdlib.h>
+
+
 int min(int a,int b)
 {
     return (a<b)?a:b;
@@ -7,7 +10,7 @@ int fibonacciSearch(int a[], int n, int key)
 {
 
     int fib2 = 0;  
-    int fib1 = 1; 
+    int fib1 = 1;  
     int fibM = fib1 + fib2;  
     
     while (fibM < n) 
@@ -42,35 +45,51 @@ int fibonacciSearch(int a[], int n, int key)
     {
         return offset + 1;
     }
+
     return -1;
 }
 int main()
 {
-    int n,key;
-    
-    printf("Enter the size of the array: ");
-    scanf("%d",&n);
-
+    int n,ch,key;
     int a[100];
-    printf("Enter the elements: ");
-    for(int i=0;i<n;i++)
-    {
-        scanf("%d",&a[i]);    
-    }
-    printf("\n");
-    
-    printf("Enter the key value: ");
-    scanf("%d",&key);
 
-    int result = fibonacciSearch(a,n,key);
+    while(1)
+    {
+        printf("1.Search.\n");
+        printf("2.exit\n");
+        printf("3.create array:\n");        
+        printf(" Enter your choise:");
+        scanf("%d",&ch);
 
-    if(result!=-1)
-    {
-        printf("............Element found..........\n");
-    }
-    else
-    {
-        printf("...........Element Not found...........\n");
+        switch(ch)
+        {
+            case 1: printf("Enter the key element to search: ");
+                    scanf("%d",&key);
+                    int result=fibonacciSearch(a,n,key);
+                    if(result!=-1)
+                    {
+                        printf("key found at index %d\n",result);
+                    }
+                    else
+                    {
+                        printf("Element not found.\n");
+                    }
+                    break;
+            case 2: exit(0);
+
+            case 3: printf("Enter the size of the array: ");
+                    scanf("%d",&n);
+
+                    printf("Enter array elements:");
+                    for(int i=0;i<n;i++)
+                    {
+                        scanf("%d",&a[i]);
+                    }
+                    break;
+
+            default: printf("Invalid choise\n");
+        }
+
     }
     return 0;
 }
