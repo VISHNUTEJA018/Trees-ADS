@@ -8,4 +8,6 @@
 <br>
 <br> AVL Tree ->Height,balance factor,max,left rotate,right rotate,create node,inorder,preorder,postorder.
 <br><br>->Fibonacci Search.
+<br>->Quick Sort
+<br>->Merge Sort
 
