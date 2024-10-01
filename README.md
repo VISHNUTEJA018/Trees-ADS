@@ -11,4 +11,5 @@
 <br>->Quick Sort
 <br>->Merge Sort
 <br>->Heap Sort
+<br>->Bitonic sort
 
