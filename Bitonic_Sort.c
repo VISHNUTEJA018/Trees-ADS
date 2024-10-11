@@ -7,25 +7,25 @@ void swap(int* a, int* b) {
     *b = temp;
 }
 
-void bitonicmerge(int arr[], int low, int cnt, int dir) {
-    if (cnt > 1) {
-        int k = cnt / 2;
-        for (int i = low; i < low + k; i++) {
-            if ((dir == 1 && arr[i] > arr[i + k]) || (dir == 0 && arr[i] < arr[i + k])) {
-                swap(&arr[i], &arr[i + k]);
+void bitonicmerge(int arr[], int low, int size, int dir) {
+    if (size > 1) {
+        int gap = size / 2;
+        for (int i = low; i < low + gap; i++) {
+            if ((dir == 1 && arr[i] > arr[i + gap]) || (dir == 0 && arr[i] < arr[i + gap])) {
+                swap(&arr[i], &arr[i + gap]);
             }
         }
-        bitonicmerge(arr, low, k, dir);
-        bitonicmerge(arr, low + k, k, dir);
+        bitonicmerge(arr, low, gap, dir);
+        bitonicmerge(arr, low + gap, gap, dir);
     }
 }
 
-void bitonicsort(int arr[], int low, int cnt, int dir) {
-    if (cnt > 1) {
-        int k = cnt / 2;
-        bitonicsort(arr, low, k, 1); // Sort in ascending order
-        bitonicsort(arr, low + k, k, 0); // Sort in descending order
-        bitonicmerge(arr, low, cnt, dir);
+void bitonicsort(int arr[], int low, int size, int dir) {
+    if (size > 1) {
+        int gap = size / 2;
+        bitonicsort(arr, low, gap, 1); // Sort in ascending order
+        bitonicsort(arr, low + gap, gap, 0); // Sort in descending order
+        bitonicmerge(arr, low, size, dir);
     }
 }
 
