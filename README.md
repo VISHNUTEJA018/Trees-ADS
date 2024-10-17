@@ -11,4 +11,5 @@
 <br>->Merge Sort
 <br>->Heap Sort
 <br>->Bitonic sort
+<br>->DFS(deapth first search)
 
