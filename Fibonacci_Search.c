@@ -17,7 +17,7 @@ int fibonacciSearch(int a[], int n, int key)
         fib1 = fibM;
         fibM = fib1 + fib2;
     }
-    
+    // Marks the eliminated range from front
     int offset = -1;
     
     while (fibM > 1)
