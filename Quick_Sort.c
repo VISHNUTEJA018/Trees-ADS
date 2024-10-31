@@ -21,7 +21,7 @@ int partition(int a[],int n,int l,int r)
             p=r ;
             l++ ;
         }
-        while(a[p]>=a[l] && p>l)
+        while(a[p]>=a[l] && l<p)
         {
                 l++ ;
         }
