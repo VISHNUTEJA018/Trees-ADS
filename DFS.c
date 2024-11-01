@@ -32,7 +32,7 @@ int main()
     }
     if(flag==0)
     {
-        printf("no rechable vertices\n");
+        printf("all reached...\n");
     }
     
 }
