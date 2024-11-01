@@ -130,6 +130,27 @@ struct node *binarysearchtree_non(struct node *root,int key)
     }
     return NULL;
 }
+// struct node* binarysearchtree(struct node *ptr,int key)  follow this search
+//  {
+//      if(ptr==NULL)
+//      {
+//          return ptr;
+//      }
+//      else if(ptr->data==key)
+//      {
+//          printf("node found.");
+//          return ptr;
+//      }
+//      else if(key<ptr->data)
+//      {
+//          return binarysearchtree(ptr->lchild,key);
+//      }
+//      else if(key>ptr->data)
+//      {
+//          return binarysearchtree(ptr->rchild,key);
+//      }
+//      return ptr;
+//  }
  void delete_node(struct node*root,int item)
 {
     struct node*ptr,*ptr1,*parent ;
