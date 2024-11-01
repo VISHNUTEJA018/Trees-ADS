@@ -10,12 +10,12 @@ void swap(int* a, int* b) {
 void bitonicmerge(int arr[], int low, int size, int dir) {
     if (size > 1) {
         int gap = size / 2;
-        for (int i = low; i < low + gap; i++) {
+        for (int i = low; i < low + gap; i++) {//every time low changes
             if ((dir == 1 && arr[i] > arr[i + gap]) || (dir == 0 && arr[i] < arr[i + gap])) {
                 swap(&arr[i], &arr[i + gap]);
             }
         }
-        bitonicmerge(arr, low, gap, dir);
+        bitonicmerge(arr, low, gap, dir);//for size 8 recursion
         bitonicmerge(arr, low + gap, gap, dir);
     }
 }
