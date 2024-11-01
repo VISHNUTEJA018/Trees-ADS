@@ -171,7 +171,7 @@ struct node *binarysearchtree_non(struct node *root,int key)
         }
         else
         {
-            flag = 1 ;
+            flag = 1 ;//node found
             break ;
         }
     }
