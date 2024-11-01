@@ -81,7 +81,7 @@ int main()
     }
     return 0;
 }
-// #include<stdio.h>
+// #include<stdio.h>  .......................using switch case...............
 // #include<stdlib.h>
 
 // int min(int a,int b)
