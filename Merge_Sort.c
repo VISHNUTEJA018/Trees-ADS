@@ -36,8 +36,8 @@ void merge(int A[],int n, int l, int mid, int up)
     }
 
     // Copy the sorted elements back to the original array
-    for (i = 0; i <k; i++) {
-        A[i+l] = temp[i];
+    for (i = l; i < k; i++) {
+        A[i] = temp[i];
     }
 }
 void mergeSort(int arr[],int n, int l, int up) {
