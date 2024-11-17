@@ -12,6 +12,7 @@
 <br>->Heap Sort
 <br>->Bitonic sort
 
-<br>graphs unit 4
+<br>graphs
 <br>->DFS(deapth first search)
+<br>->BFS(breath first search)
 
